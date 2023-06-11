@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include gratuity_control *.css
+recursive-include gratuity_control *.csv
+recursive-include gratuity_control *.html
+recursive-include gratuity_control *.ico
+recursive-include gratuity_control *.js
+recursive-include gratuity_control *.json
+recursive-include gratuity_control *.md
+recursive-include gratuity_control *.png
+recursive-include gratuity_control *.py
+recursive-include gratuity_control *.svg
+recursive-include gratuity_control *.txt
+recursive-exclude gratuity_control *.pyc
