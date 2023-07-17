@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-13 18:55:05.241480",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "salary_slip_id",
+  "employee_name",
+  "department",
+  "column_break_7gocj",
+  "posting_date",
+  "status",
+  "company",
+  "section_break_s1wu6",
+  "currency",
+  "payroll_frequency",
+  "salary_structure",
+  "column_break_bg0pm",
+  "payroll_entry",
+  "start_date",
+  "end_date",
+  "total_days_section",
+  "working_days",
+  "payment_days",
+  "mode_of_payment",
+  "amount_section",
+  "gross_pay",
+  "total_deduction",
+  "rounded_total",
+  "column_break_d1fkl",
+  "bank_name",
+  "bank_account_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Department"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Currency",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "payroll_frequency",
+   "fieldtype": "Data",
+   "label": "Payroll Frequency"
+  },
+  {
+   "fieldname": "salary_structure",
+   "fieldtype": "Link",
+   "label": "Salary Structure",
+   "options": "Salary Structure"
+  },
+  {
+   "fieldname": "payroll_entry",
+   "fieldtype": "Data",
+   "label": "Payroll Entry"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "working_days",
+   "fieldtype": "Data",
+   "label": "Working Days"
+  },
+  {
+   "fieldname": "payment_days",
+   "fieldtype": "Data",
+   "label": "Payment Days"
+  },
+  {
+   "fieldname": "gross_pay",
+   "fieldtype": "Currency",
+   "label": "Gross Pay"
+  },
+  {
+   "fieldname": "total_deduction",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Deduction"
+  },
+  {
+   "fieldname": "rounded_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Salary"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "bank_account_no",
+   "fieldtype": "Data",
+   "label": "Bank Account No"
+  },
+  {
+   "fieldname": "column_break_7gocj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_s1wu6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bg0pm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_days_section",
+   "fieldtype": "Section Break",
+   "label": "Total Days"
+  },
+  {
+   "fieldname": "amount_section",
+   "fieldtype": "Section Break",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "column_break_d1fkl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Data",
+   "label": "Mode of Payment"
+  },
+  {
+   "fieldname": "salary_slip_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Salary Slip"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-13 20:28:31.093084",
+ "modified_by": "Administrator",
+ "module": "Gratuity Control",
+ "name": "Salary Slip Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

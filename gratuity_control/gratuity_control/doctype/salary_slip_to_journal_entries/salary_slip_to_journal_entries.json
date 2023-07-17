@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_rename": 1,
+ "creation": "2023-07-13 18:45:26.986215",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "System",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "select_date",
+  "column_break_ylgxg",
+  "status",
+  "column_break_tqkl9",
+  "company",
+  "generate_journal_entries",
+  "section_break_kumdz",
+  "get_employee_salaries",
+  "salary_slip_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "select_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "column_break_ylgxg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nDraft\nSubmitted"
+  },
+  {
+   "fieldname": "column_break_tqkl9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "generate_journal_entries",
+   "fieldtype": "Button",
+   "label": "Generate Journal Entries"
+  },
+  {
+   "fieldname": "section_break_kumdz",
+   "fieldtype": "Section Break",
+   "label": "Employee Salaries"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "salary_slip_details",
+   "fieldtype": "Table",
+   "label": "Salary Slip Details",
+   "options": "Salary Slip Details"
+  },
+  {
+   "fieldname": "get_employee_salaries",
+   "fieldtype": "Button",
+   "label": "Get Employee Salaries"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2023-07-13 20:21:42.549546",
+ "modified_by": "Administrator",
+ "module": "Gratuity Control",
+ "name": "Salary Slip To Journal Entries",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
