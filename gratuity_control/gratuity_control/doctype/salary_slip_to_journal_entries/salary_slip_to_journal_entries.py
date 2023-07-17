@@ -8,11 +8,12 @@ class SalarySlipToJournalEntries(Document):
 	pass
 @frappe.whitelist()
 def get_salaries_slip(**args):
-	posting_date = args.get('posting_date')
+	start_date = args.get('start_date')
+	end_date = args.get('end_date')
 	status = args.get('status')
 	company = args.get('company')
 	sal = frappe.db.sql("""select employee,employee_name,posting_date,status,company,total_deduction,gross_pay,start_date,end_date,salary_structure,bank_name,bank_account_no,rounded_total,\
-	department,payroll_entry,payroll_frequency,mode_of_payment,total_working_days,payment_days,currency,name from `tabSalary Slip` where status=%s""",(status))
+	department,payroll_entry,payroll_frequency,mode_of_payment,total_working_days,payment_days,currency,name from `tabSalary Slip` where status=%s and posting_date >= %s and posting_date <= %s""",(status,start_date,end_date))
 	doc = frappe.get_doc("Salary Slip To Journal Entries")
 	doc.salary_slip_details = []
 	for sa in sal:
@@ -46,5 +47,32 @@ def get_salaries_slip(**args):
 @frappe.whitelist()
 def generate_journal_entries(**args):
 	a = 5
-	doc = frappe.db.sql(""" select employee,salary_slip_id,posting_date,rounded_total,gross_pay,bank_name,bank_account_no,mode_of_payment,company,department from `tabSalary Slip Details` """)
-	frappe.msgprint(frappe.as_json(doc))
+	account = args.get('account')
+	debit_account = args.get('debit_account')
+	doc = frappe.db.sql(""" select employee,salary_slip_id,posting_date,rounded_total,bank_name,bank_account_no from `tabSalary Slip Details` """)
+	je = frappe.new_doc("Journal Entry")
+	if doc:
+		je.voucher_type = "Bank Entry"
+		je.posting_date = doc[0][2]
+		je.cheque_no = "1290381209312093"
+		je.cheque_date = doc[0][2]
+		for t in doc:
+			je.append(
+				"accounts",
+				{
+					"account": account,
+					"credit_in_account_currency": t[3]
+				},
+			)
+			je.append(
+				"accounts",
+				{
+					"account":debit_account,
+					"debit_in_account_currency": t[3]
+				},
+			)
+		frappe.db.delete("Salary Slip Details")
+		je.save()
+		return "ok"
+	else:
+		return "none"

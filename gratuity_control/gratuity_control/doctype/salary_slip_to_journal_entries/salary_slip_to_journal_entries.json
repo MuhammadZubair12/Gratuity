@@ -9,11 +9,17 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "select_date",
-  "column_break_ylgxg",
+  "start_date",
+  "column_break_2",
+  "end_date",
+  "column_break_4",
   "status",
   "column_break_tqkl9",
   "company",
+  "column_break_6",
+  "account",
+  "column_break_11",
+  "debit_account",
   "generate_journal_entries",
   "section_break_kumdz",
   "get_employee_salaries",
@@ -21,19 +27,10 @@
  ],
  "fields": [
   {
-   "fieldname": "select_date",
-   "fieldtype": "Date",
-   "label": "Posting Date"
-  },
-  {
-   "fieldname": "column_break_ylgxg",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nDraft\nSubmitted"
+   "options": "Submitted"
   },
   {
    "fieldname": "column_break_tqkl9",
@@ -66,6 +63,53 @@
    "fieldname": "get_employee_salaries",
    "fieldtype": "Button",
    "label": "Get Employee Salaries"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Credit Account For Bank Entry",
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Credit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Debit Account For Bank Entry",
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "label": "Debit Account",
+   "options": "Account",
+   "reqd": 1
   }
  ],
  "hide_toolbar": 1,
@@ -73,7 +117,7 @@
  "issingle": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2023-07-13 20:21:42.549546",
+ "modified": "2023-07-17 05:22:16.570878",
  "modified_by": "Administrator",
  "module": "Gratuity Control",
  "name": "Salary Slip To Journal Entries",
