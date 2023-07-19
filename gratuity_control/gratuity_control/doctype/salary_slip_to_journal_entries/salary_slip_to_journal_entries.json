@@ -9,6 +9,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "filters_section",
   "start_date",
   "column_break_2",
   "end_date",
@@ -47,7 +48,7 @@
   {
    "fieldname": "section_break_kumdz",
    "fieldtype": "Section Break",
-   "label": "Employee Salaries"
+   "label": "Employee Salaries Slip"
   },
   {
    "fieldname": "company",
@@ -68,7 +69,8 @@
   },
   {
    "fieldname": "column_break_6",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Mandatory Fields"
   },
   {
    "description": "Credit Account For Bank Entry",
@@ -121,7 +123,13 @@
    "description": "Cheque No etc",
    "fieldname": "reference_number",
    "fieldtype": "Data",
-   "label": "Reference Number"
+   "label": "Reference Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "filters_section",
+   "fieldtype": "Section Break",
+   "label": "Filters"
   }
  ],
  "hide_toolbar": 1,
@@ -129,7 +137,7 @@
  "issingle": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2023-07-18 21:19:11.726060",
+ "modified": "2023-07-19 01:02:36.741459",
  "modified_by": "Administrator",
  "module": "Gratuity Control",
  "name": "Salary Slip To Journal Entries",
