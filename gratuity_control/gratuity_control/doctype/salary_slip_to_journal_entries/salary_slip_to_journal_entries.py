@@ -49,18 +49,21 @@ def generate_journal_entries(**args):
 	a = 5
 	account = args.get('account')
 	debit_account = args.get('debit_account')
+	reference_number = args.get('reference_number')
 	doc = frappe.db.sql(""" select employee,salary_slip_id,posting_date,rounded_total,bank_name,bank_account_no from `tabSalary Slip Details` """)
 	je = frappe.new_doc("Journal Entry")
 	if doc:
 		je.voucher_type = "Bank Entry"
 		je.posting_date = doc[0][2]
-		je.cheque_no = "1290381209312093"
+		je.cheque_no = reference_number
 		je.cheque_date = doc[0][2]
 		for t in doc:
 			je.append(
 				"accounts",
 				{
 					"account": account,
+					"party_type": "Employee",
+					"party": t[0],
 					"credit_in_account_currency": t[3]
 				},
 			)
@@ -68,6 +71,8 @@ def generate_journal_entries(**args):
 				"accounts",
 				{
 					"account":debit_account,
+					"party_type": "Employee",
+					"party": t[0],
 					"debit_in_account_currency": t[3]
 				},
 			)
