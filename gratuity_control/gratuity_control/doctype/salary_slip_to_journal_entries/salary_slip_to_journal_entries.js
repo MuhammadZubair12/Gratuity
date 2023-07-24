@@ -28,7 +28,7 @@ frappe.ui.form.on('Salary Slip To Journal Entries', {
 					status: frm.doc.status
 				}
 			}).then((r) => {
-				console.log("Response", r)
+				// console.log("Response", r)
 			})
 		} else {
 			alert("Please select all filters")
